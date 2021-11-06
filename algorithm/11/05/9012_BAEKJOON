@@ -1,0 +1,16 @@
+for tc in range(int(input())):
+    data = list(input())
+    stack = []
+    ans = 'YES'
+    for i in range(len(data)):
+        if data[i] == '(':
+            stack.append(data[i])
+        elif data[i] == ')':
+            if stack and stack[-1] == '(':
+                stack.pop()
+            else:
+                ans = 'NO'
+                break
+    if stack:
+        ans = 'NO'
+    print(ans)
